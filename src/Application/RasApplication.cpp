@@ -8,6 +8,8 @@
 
 #include "RasApplication.h"
 
+#include "Util/Log.h"
+
 namespace Ras2D
 {
     Application* Application::sInstance = nullptr;
@@ -34,9 +36,13 @@ namespace Ras2D
         
 		_director = new Director(this);
 		success = _director->Init();
+        
+        Log::Log("Initialising Director: " + success ? "Success" : "Failed");
 
         _renderManager = new RenderManager(this);
         success &= _renderManager->Init();
+        
+        Log::Log("Initialising Renderer: " + success ? "Success" : "Failed");
         
 		return success;
 	}
