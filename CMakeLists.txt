@@ -14,6 +14,19 @@ include_directories(lib/glfw/include)
 
 include_directories(src)
 
-file(GLOB_RECURSE SOURCES "src" "*.cpp" "*.h")
+set(SOURCES src/Application/RasApplication.cpp
+    src/Controller/Director.cpp
+    src/Controller/InputManager.cpp
+    src/Controller/RenderManager.cpp
+    src/Math/BaseMath.cpp
+    src/Util/Log.cpp
+    src/View/Node.cpp
+    src/View/Scene.cpp)
+
+if (APPLE)
+    list(APPEND SOURCES src/Platform/OSX/Util/FileUtils.cpp)
+elseif(WIN32)
+    list(APPEND SOURCES src/Platform/Win32/Util/FileUtils.cpp)
+endif()
 
 add_library(ras2d STATIC ${SOURCES})

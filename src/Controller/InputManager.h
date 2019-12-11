@@ -21,7 +21,7 @@ namespace Ras2D
     public:
         InputManager(Application* application);
         
-        void ProcessInput(GLFWwindow window);
+        void ProcessInput(GLFWwindow* window);
         
     private:
         std::vector<bool> _keys;

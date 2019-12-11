@@ -16,7 +16,7 @@ namespace Ras2D
         
     }
 
-    void InputManager::ProcessInput(GLFWwindow window)
+    void InputManager::ProcessInput(GLFWwindow* window)
     {
          glfwPollEvents();
 
