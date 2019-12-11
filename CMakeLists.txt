@@ -12,6 +12,8 @@ add_subdirectory(lib/glfw)
 include_directories(lib/glew/include)
 include_directories(lib/glfw/include)
 
-file(GLOB SOURCES "src/Application/*.cpp" "src/Controller/*.cpp" "src/Math/*.cpp" "src/Platform/*.cpp" "src/Util/*.cpp" "src/View/*.cpp")
+include_directories(src)
+
+file(GLOB_RECURSE SOURCES "src" "*.cpp" "*.h")
 
 add_library(ras2d STATIC ${SOURCES})

@@ -10,9 +10,9 @@
 
 #include "Math/BaseMath.h"
 
-#include <GL/glew.h>
+#include "GL/glew.h"
 #define GLFW_DLL
-#include <GLFW/glfw3.h>
+#include "GLFW/glfw3.h"
 
 #include <string>
 
